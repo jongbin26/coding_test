@@ -10,4 +10,4 @@ int main() {
 	std::cin >> n;
 	std::cout << fac(n) << std::endl;
 }
-//¸ðµç ÄÉÀÌ½º¸¦ Æ÷ÇÔ 
+//¸ðµç ÄÉÀÌ½º¸¦ Æ÷ÇÔ
