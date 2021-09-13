@@ -23,4 +23,4 @@ int main() {
 		tmp1 = 0; tmp2 = 0; pos = 0;
 	}
 	cout << n-cnt;
-}
+} 
