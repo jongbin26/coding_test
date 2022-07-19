@@ -27,7 +27,7 @@ def dfs(x, y, d):
     ny = y + dy[nd]
     if graph[nx][ny] == 1:
         return
-    dfs(nx, ny, d)
+    dfs(nx, ny, d) 
     
 
 
