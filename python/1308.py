@@ -18,4 +18,4 @@ for i in range(0,1000) :
 if d_day >= over :
     print('gg')
 else :
-    print(f'D-{d_day}')
+    print(f'D-{d_day}') 
