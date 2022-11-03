@@ -18,4 +18,4 @@ for i in range(n):
             high = max(high, dp[j])
     dp[i] = max(dp[i], high + 1)
     
-print(max(dp))
+print(max(dp)) 
