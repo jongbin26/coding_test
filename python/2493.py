@@ -4,9 +4,9 @@ tower = []
 for i in range(len(temp)):
     tower.append([i, temp[i]])
 
-stack = [[tower[0][0], tower[0][1]]]
+stack = []
 ans = [0] * n
-for i in range(1, len(tower)):
+for i in range(0, len(tower)):
     while(True):
         if stack:
             if stack[-1][1] < tower[i][1]:
