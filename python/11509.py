@@ -1,16 +1,13 @@
 n = int(input())
 balloon = list(map(int, input().split()))
-
+arrow = [0] * (n+1)
 ans = 0
-for i in range(len(balloon)):
-    if balloon[i] > 0:
+for i in range(n):
+    height = balloon[i]
+    if arrow[height]:
+        arrow[height] -=1
+        arrow[height-1] += 1
+    else:
         ans += 1
-        y = balloon[i] - 1
-        for x in range(i+1, len(balloon)):
-            if y == 0:
-                break
-            if balloon[x] == y:
-                y -= 1
-                balloon[x] = 0
-            
+        arrow[height-1]+= 1
 print(ans)
