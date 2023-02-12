@@ -1,5 +1,5 @@
 import sys
-sys.setrecursionlimit(10**6)
+sys.setrecursionlimit(10**5)
 n, m = map(int, input().split())
 #parent initialization
 parent = [0] * (n+1)
@@ -30,4 +30,4 @@ for i in range(m):
         else:
             ans.append("NO")
 for i in ans:
-    print(i)
+    print(i) 

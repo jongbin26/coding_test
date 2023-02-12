@@ -1,20 +1,23 @@
 import math
-
+prime = [0] * 1000001
 def primeNumber(x):
     for i in range(2, int(math.sqrt(x)+1)):
         if x % i ==0:
             return False
     return True
-
-a = 1
+for i in range(2, 1000001):
+    if primeNumber(i) == True:
+        prime[i] = 1
+    else:
+        prime[i] = 0
 ans = []
-while(a != 0):
+while(True):
     a = int(input())
-    for i in range(2, a):
-        if primeNumber(i) == True:
-            if primeNumber(a-i) == True:
-                ans.append(str(a)+" = "+str(i)+" + "+str(a-i))
-                break
-                
-for res in ans:
-    print(res)
+    if a == 0:
+        break
+    for i in range(3, a):
+        if prime[i] and prime[a-i]:
+            ans.append(str(a) + " = " + str(i) + " + " + str(a-i))
+            break
+for i in ans:
+    print(i) 
