@@ -31,10 +31,13 @@ def rotate(first_bool):
 ans = []
 ans.append(rotate(1))
 ans.append(rotate(0))
-    
-if ans[0] >= 0:
+if ans[0] >= 0 and ans[1] >= 0 and ans[0] <= ans[1]:
     print(ans[0])
-elif ans[1] >= 0:
+elif ans[0] >= 0 and ans[1] >= 0 and ans[0] >= ans[1]:
+    print(ans[1])
+elif ans[0] >= 0 and ans[1] < 0:
+    print(ans[0])
+elif ans[1] >= 0 and ans[0] < 0:
     print(ans[1])
 else:
     print(-1)
