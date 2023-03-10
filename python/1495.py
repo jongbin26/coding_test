@@ -14,4 +14,4 @@ for idx in range(m+1):
     if dp[n][idx] == 1:
         if idx > ans:
             ans = idx
-print(ans)    
+print(ans)
