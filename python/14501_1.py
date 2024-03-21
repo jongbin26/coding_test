@@ -9,8 +9,16 @@ for i in range(n-1, -1, -1):
     else: dp[i] = dp[i+1]
 print(dp)
 
-#앞에서부터 dp 풀이
-for i in range(n):
-    if i + data[i][0] <= n:
-        dp[i+data[i][0]] += data[i][1]
-        
+# #브루트포스 풀이
+# ans = 0
+# def retirement(x, sum):
+#     global ans
+#     if x == n:
+#         ans = max(ans, sum)
+#         return
+#     if x > n:
+#         return
+#     retirement(x+data[x][0], sum+data[x][1])
+#     retirement(x+1, sum)
+# retirement(0, 0)
+# print(ans)
