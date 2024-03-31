@@ -16,5 +16,4 @@ for i in data:
         else:
             heapq.heappush(heap, i[1])
     ans = max(ans, len(heap))
-    print(heap)
 print(ans)
