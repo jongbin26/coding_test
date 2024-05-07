@@ -1,27 +1,42 @@
 from collections import deque
 n = int(input())
 m = int(input())
-graph = [[] for _ in range(n+1)]
+
+time = [0] * (n+1)
 indegree = [0] * (n+1)
+graph = [[] for _ in range(n+1)]
+cnt = [[] for _ in range(n+1)]
+
 for _ in range(m):
     a, b, c = map(int, input().split())
-    graph[a].append(b)
+    graph[a].append((c, b))
     indegree[b] += 1
+
 start, end = map(int, input().split())
 
-def topology():
-    result = []
-    queue = deque()
-    for i in range(1, n+1):
-        if indegree[i] == 0:
-            queue.append(i)
-    while queue:
-        x = queue.popleft()
-        result.append(x)
+queue = deque([])
+queue.append(start)
 
-        for i in graph[x]:
-            indegree[i] -= 1
-            if indegree[i] == 0:
-                queue.append(i)
-    return result
-print(topology())
+while queue:
+    now = queue.popleft()
+    for i in graph[now]:
+        indegree[i[1]] -= 1
+        if time[i[1]] < time[now] + i[0]:
+            time[i[1]] = time[now] + i[0]
+            cnt[i[1]] = [now]
+        elif time[i[1]] == time[now] + i[0]:
+            cnt[i[1]].append(now)
+
+        if indegree[i[1]] == 0:
+            queue.append(i[1])
+queue = deque([end])
+route = set()
+while queue:
+    now = queue.popleft()
+    for x in cnt[now]:
+        if (now, x) not in route:
+            route.add((now, x))
+            queue.append(x)
+
+print(time[end])
+print(len(route))
