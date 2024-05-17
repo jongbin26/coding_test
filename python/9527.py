@@ -1,7 +1,7 @@
 import math
 def sum(x):
     if x <= 0:
-        return
+        return 0 
     expo = int(math.log2(x))
     floor = 2 ** expo
     if x == floor:
