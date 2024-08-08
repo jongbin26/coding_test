@@ -39,11 +39,6 @@ def minus():
             if graph[i][j] > 0:
                 graph[i][j] -= 1
 
-def print_graph():
-    for i in range(n):
-        for j in range(m):
-            print(graph[i][j], end=' ')
-        print()
 while(not finish()):
     visited = [[0] * m for _ in range(n)]
     for i in range(n):
