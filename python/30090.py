@@ -19,5 +19,4 @@ for permutation in permutations:
         if flag:
             queue.appendleft(a+b)
     ans = min(ans, len(queue[0]))
-
 print(ans)
