@@ -1,3 +1,5 @@
+import sys
+sys.setrecursionlimit(5000)
 n, m = map(int ,input().split())
 edges = []
 for _ in range(m):
